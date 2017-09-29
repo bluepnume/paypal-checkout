@@ -14,7 +14,7 @@ export function determineUrl(env : string, fundingSource : string, token : strin
     if (token.indexOf('BA-') === 0) {
         info(`url_billing`);
         return config.billingUrls[env];
-    } else if (token.indexOf('PAY-') === 0) {
+    } else if (token.indexOf('PAY-') === 0 || token.indexOf('PAYID-') === 0) {
         info(`url_payment`);
     } else if (token.indexOf('EC-') === 0) {
         info(`url_checkout`);
